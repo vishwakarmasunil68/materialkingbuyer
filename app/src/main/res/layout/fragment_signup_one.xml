@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
+    <include layout="@layout/toolbar_layout"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="?android:attr/selectableItemBackground"
+        android:padding="@dimen/dp_15">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                >
+
+                <android.support.v7.widget.AppCompatEditText
+                    android:id="@+id/etName"
+                    android:maxLines="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="NAME:"
+                    android:inputType="textNoSuggestions"
+                    android:textSize="@dimen/sp_18" />
+            </android.support.design.widget.TextInputLayout>
+
+
+
+            <com.appentus.materialking.utility.NoDefaultSpinner
+                android:id="@+id/spinnerGenderSpinner"
+                android:layout_marginTop="16dp"
+                android:paddingTop="4dp"
+                android:layout_marginBottom="4dp"
+                android:paddingBottom="4dp"
+                style="@style/Animation.AppCompat.DropDownUp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:spinnerMode="dialog">
+
+
+            </com.appentus.materialking.utility.NoDefaultSpinner>
+
+
+
+
+
+
+
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_10"
+                >
+
+                <android.support.v7.widget.AppCompatEditText
+                    android:id="@+id/etMobile"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="MOBILE:"
+                    android:maxLines="1"
+                    android:maxLength="10"
+                    android:digits="0123456789"
+                    android:inputType="number"
+                    android:textSize="@dimen/sp_18" />
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_10"
+                >
+
+                <android.support.v7.widget.AppCompatEditText
+                    android:id="@+id/etEmail"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="EMAIL:"
+                    android:maxLines="1"
+                    android:inputType="textNoSuggestions"
+                    android:textSize="@dimen/sp_18" />
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_10"
+                app:passwordToggleEnabled="true"
+                app:passwordToggleTint="@color/colorAccent"
+                >
+
+                <android.support.v7.widget.AppCompatEditText
+                    android:id="@+id/etPassword"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:maxLines="1"
+                    android:hint="Password:"
+                    android:maxLength="20"
+                    android:inputType="textPassword"
+                    android:textSize="@dimen/sp_18" />
+            </android.support.design.widget.TextInputLayout>
+
+
+        </LinearLayout>
+
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/tv_email_signin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="@dimen/dp_10"
+            android:gravity="center"
+            android:text="@string/already_have_an_account_sign_in"
+            android:textColor="@color/colorBlack" />
+
+        <android.support.v7.widget.AppCompatButton
+            android:id="@+id/btn_email_continue"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/tv_email_signin"
+            android:layout_marginBottom="@dimen/dp_10"
+            android:background="@drawable/round_btn"
+            android:shadowColor="@color/colorBlack"
+            android:text="continue"
+            android:textAllCaps="true"
+            android:textColor="@color/colorWhite" />
+
+
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/tv_conditions"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/btn_email_continue"
+            android:layout_marginBottom="@dimen/dp_15"
+            android:fontFamily="sans-serif"
+            android:gravity="center"
+            android:text="@string/tcconfitions"
+            android:textColor="@color/colorBlack" />
+
+    </RelativeLayout>
+
+</LinearLayout>

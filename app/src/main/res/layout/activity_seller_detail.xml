@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".views.activity.SellerDetailActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="25dp"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:src="@drawable/ic_default_profile_pic" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="10dp">
+
+        <TextView
+            android:id="@+id/tv_seller_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Seller Name :- "
+            android:layout_marginTop="7dp"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/tv_email"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Email :- "
+            android:layout_marginTop="7dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv_mobile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Mobile :- "
+            android:layout_marginTop="7dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv_area"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Area :- "
+            android:layout_marginTop="7dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv_city"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="City :- "
+            android:layout_marginTop="7dp"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/tv_state"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="State :- "
+            android:layout_marginTop="7dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv_pincode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Pincode :- "
+            android:layout_marginTop="7dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv_landmark"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="LandMark :- "
+            android:layout_marginTop="7dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv_serve_city"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Serve City :- "
+            android:layout_marginTop="7dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv_business_type"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Business Type :- "
+            android:layout_marginTop="7dp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+</LinearLayout>

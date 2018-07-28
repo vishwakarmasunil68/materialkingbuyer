@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_margin="@dimen/dp_10">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@drawable/tab_unselected_indicator_background"
+        android:padding="@dimen/dp_05">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="@dimen/dp_10"
+            android:layout_weight="1"
+            android:padding="@dimen/dp_05">
+            <android.support.v7.widget.AppCompatTextView
+                android:id="@+id/tv_view_partial_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Product 1"
+                android:textSize="@dimen/sp_18"
+                android:textColor="@color/colorWhite"
+                android:textStyle="bold" />
+            <android.support.v7.widget.AppCompatTextView
+                android:id="@+id/tv_view_partial_amount"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Offers: 1500 INR"
+                android:textSize="@dimen/sp_16"
+                android:textColor="@color/colorWhite"
+                android:layout_marginBottom="@dimen/dp_05"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:padding="@dimen/dp_10">
+            <android.support.v7.widget.AppCompatCheckBox
+                android:id="@+id/cb_check_partial"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:theme="@style/MyCheckBox"/>
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+</LinearLayout>

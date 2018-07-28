@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "189483553349",
+    "firebase_url": "https://mk-buyer.firebaseio.com",
+    "project_id": "mk-buyer",
+    "storage_bucket": "mk-buyer.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:189483553349:android:8293b013b2436bd9",
+        "android_client_info": {
+          "package_name": "com.appentus.materialking"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "189483553349-3n7bg62ea1h7ndpla0rkvonccmq8b2k2.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.appentus.materialking",
+            "certificate_hash": "d3be9b87d9089054bb7e3f71607e537d0e42ff9f"
+          }
+        },
+        {
+          "client_id": "189483553349-b7vrs8qo97b8pmr0vcknvoe82midgfl9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD0PotvBz0F_ELR0iciwcGXkBh_GYF9QgQ"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "189483553349-b7vrs8qo97b8pmr0vcknvoe82midgfl9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

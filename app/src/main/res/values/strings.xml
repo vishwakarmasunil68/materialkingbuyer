@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">Buyer</string>
+
+
+    <string name="don_t_haddve_account_sign_up">Don\'t have Account? <b><u><font color='red'>"Sign Up"</font></u></b></string>
+
+
+    <string name="navigation_drawer_open">Open</string>
+    <string name="navigation_drawer_close">Close</string>
+    <string name="don_t_have_account_sign_up">Don\'t have Account? <b><u>Sign Up</u></b></string>
+    <string name="already_have_an_account_sign_in">Already have an account? <b><u>Sign in!</u></b></string>
+
+    <string name="noConnection">Connection Lost!</string>
+    <string name="error">Error!</string>
+    <string name="checkInternet">Please check your Internet connectivity.</string>
+    <string name="tryAfterSomeTime">Our Engineers are working on this problem. Please try after sometime or contact to support. Thanks</string>
+    <string name="tcconfitions">By tapping continue, you agree to the <font color='red'>"Terms  &amp; Conditions"</font>  and <font color='red'>"Privacy Policy"</font></string>
+
+</resources>

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@color/colorWhite"
+    android:layout_margin="@dimen/dp_10">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_margin="@dimen/dp_10">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_weight="1">
+
+            <android.support.v7.widget.AppCompatTextView
+                android:id="@+id/tv_bid_orderId"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Order ID:#1234567"
+                android:textColor="@color/colorBlack"
+                android:textSize="@dimen/sp_18"/>
+            <android.support.v7.widget.AppCompatTextView
+                android:id="@+id/tv_bid_date"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Date: 05/05/05"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/sp_15"
+                android:layout_marginTop="@dimen/dp_15"/>
+            <android.support.v7.widget.AppCompatTextView
+                android:id="@+id/tv_bid_status"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Status: Bidding"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/sp_15"/>
+            <android.support.v7.widget.AppCompatTextView
+                android:id="@+id/tv_bid_completed_orders"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Completed Order Bids: 25"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/sp_15"/>
+            <android.support.v7.widget.AppCompatTextView
+                android:id="@+id/tv_bid_recommended_orders"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Recommended Bids: 15"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/sp_15"/>
+            <android.support.v7.widget.AppCompatTextView
+                android:id="@+id/tv_bid_partial_orders"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Partial Order list: 20"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/sp_15"/>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center">
+            <ImageView
+                android:id="@+id/iv_next"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_chevron_right_black_24dp" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</LinearLayout>

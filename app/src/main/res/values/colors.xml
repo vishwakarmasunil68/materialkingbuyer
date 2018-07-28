@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3DA5F5</color>
+    <color name="colorPrimaryDark">#218adb</color>
+    <color name="colorAccent">#000</color>
+
+    <color name="colorWhite">#fff</color>
+    <color name="colorBlack">#000</color>
+    <color name="colorGrey">#a8a8a8</color>
+    <color name="colorDarkGrey">#a2a2a2</color>
+
+    <color name="drawerSelectedBackground">#627179</color>
+    <color name="drawerItemBackground">#F6F6F6</color>
+    <color name="colorTransparent">#70F80000</color>
+
+</resources>

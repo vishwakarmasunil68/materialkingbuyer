@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.appentus.materialking.views.activity.OrderActivity">
+
+    <android.support.v7.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?android:actionBarSize"
+        android:orientation="vertical"
+        android:theme="@style/ToolbarStyle"
+        app:contentInsetLeft="0dp"
+        app:contentInsetStart="0dp"
+        android:background="@color/colorPrimary"
+        app:contentInsetStartWithNavigation="0dp"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        app:subtitleTextColor="@color/colorWhite"
+        app:titleTextAppearance="@style/Toolbar.TitleText"
+        app:titleTextColor="@color/colorWhite">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <android.support.v7.widget.AppCompatTextView
+                android:layout_width="match_parent"
+                android:id="@+id/titleToolbar"
+                android:gravity="center"
+                android:text="Order Details"
+                android:textSize="20sp"
+                android:textColor="#FFF"
+                android:layout_height="match_parent" />
+
+
+            <TextView
+                android:id="@+id/tv_view_item"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="View Items"
+                android:layout_gravity="right|center"
+                android:textColor="#FFFFFF"
+                android:layout_marginRight="15dp"/>
+
+
+
+        </FrameLayout>
+    </android.support.v7.widget.Toolbar>
+
+    <RadioGroup
+        android:id="@+id/rg_select_tabs"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="3"
+        android:layout_marginTop="@dimen/dp_05">
+
+        <RadioButton
+            android:id="@+id/rb_completed_order"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:background="@drawable/background_selector_orders"
+            android:button="@null"
+            android:gravity="center"
+            android:text="Complete Order"
+            android:textColor="@drawable/text_selector_order"
+            android:layout_margin="3dp"/>
+
+        <RadioButton
+            android:id="@+id/rb_partial_order"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:background="@drawable/background_selector_orders"
+            android:button="@null"
+            android:gravity="center"
+            android:text="Partial Order"
+            android:textColor="@drawable/text_selector_order"
+            android:layout_margin="3dp"/>
+
+        <RadioButton
+            android:id="@+id/rb_recommended_order"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:background="@drawable/background_selector_orders"
+            android:button="@null"
+            android:gravity="center"
+            android:text="Recommended"
+            android:textColor="@drawable/text_selector_order"
+            android:layout_margin="3dp"/>
+
+    </RadioGroup>
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/viewPager_orders"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"/>
+
+    <Button
+        android:id="@+id/btn_selected_offers"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="selected offers"/>
+
+</LinearLayout>

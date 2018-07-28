@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.chauthai.swipereveallayout.SwipeRevealLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:dragEdge="right"
+    app:mode="same_level"
+    android:layout_margin="@dimen/dp_05">
+
+    <FrameLayout
+        android:layout_width="100dp"
+        android:layout_height="150dp"
+        android:layout_margin="5dp"
+        android:background="#C04933">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:src="@drawable/cut_icon"
+            android:padding="@dimen/dp_20"/>
+
+    </FrameLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_margin="5dp">
+
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:cardBackgroundColor="@color/colorWhite">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:layout_marginBottom="@dimen/dp_05"
+                    android:layout_marginTop="@dimen/dp_05"
+                    android:orientation="horizontal"
+                    android:weightSum="1.0">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight=".40"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/iv_item_image_cart"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:padding="@dimen/dp_10"
+                            android:scaleType="fitXY"
+                            android:src="@drawable/groomingslider2" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight=".60"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:orientation="horizontal"
+                            android:layout_weight="1">
+
+                            <android.support.v7.widget.AppCompatTextView
+                                android:id="@+id/tv_item_name"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:paddingTop="@dimen/dp_15"
+                                android:layout_weight="1"
+                                android:text="Bharathi OPC 43 Grade"
+                                android:gravity="top|center"
+                                android:textSize="@dimen/sp_14"
+                                android:textStyle="bold" />
+
+                            <ImageView
+                                android:id="@+id/iv_delete"
+                                android:layout_width="25dp"
+                                android:layout_height="25dp"
+                                android:src="@drawable/close_icon"
+                                android:tint="#000000"/>
+
+                        </LinearLayout>
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:orientation="horizontal"
+                            android:layout_marginTop="@dimen/dp_15"
+                            android:layout_marginBottom="@dimen/dp_20">
+
+                            <android.support.v7.widget.AppCompatTextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="@dimen/dp_15"
+                                android:text="Qty"
+                                android:paddingBottom="@dimen/dp_05"
+                                android:paddingTop="@dimen/dp_05"
+                                android:textSize="@dimen/sp_16" />
+
+                            <android.support.v7.widget.AppCompatTextView
+                                android:id="@+id/tv_minus_item"
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:background="@drawable/ic_minus_icon"
+                                android:textStyle="bold" />
+
+                            <android.support.v7.widget.AppCompatTextView
+                                android:id="@+id/tv_quantity_cart"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/dp_15"
+                                android:layout_marginEnd="@dimen/dp_15"
+                                android:paddingStart="@dimen/dp_20"
+                                android:paddingEnd="@dimen/dp_20"
+                                android:paddingTop="@dimen/dp_05"
+                                android:paddingBottom="@dimen/dp_05"
+                                android:background="@drawable/cart_quantity_background"
+                                android:text="10"
+                                android:textSize="@dimen/sp_16" />
+
+                            <android.support.v7.widget.AppCompatTextView
+                                android:id="@+id/tv_plus_item"
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:background="@drawable/ic_plus_icon" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+
+        </android.support.v7.widget.CardView>
+
+    </FrameLayout>
+
+</com.chauthai.swipereveallayout.SwipeRevealLayout>
+

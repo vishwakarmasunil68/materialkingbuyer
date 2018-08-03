@@ -64,6 +64,9 @@ public class BidInfoPOJO implements Serializable{
     @SerializedName("rec_prod")
     @Expose
     private RecommendedBidInfoPOJO recommendedBidInfoPOJO;
+    @SerializedName("bid_rec")
+    @Expose
+    private RecommendedBidInfoPOJO offerRecommendedProduct;
     @SerializedName("recommended_product")
     @Expose
     private List<RecommendedBidInfoPOJO> recommendedBidInfoPOJOS;
@@ -235,5 +238,13 @@ public class BidInfoPOJO implements Serializable{
 
     public void setSeller_status(String seller_status) {
         this.seller_status = seller_status;
+    }
+
+    public RecommendedBidInfoPOJO getOfferRecommendedProduct() {
+        return offerRecommendedProduct;
+    }
+
+    public void setOfferRecommendedProduct(RecommendedBidInfoPOJO offerRecommendedProduct) {
+        this.offerRecommendedProduct = offerRecommendedProduct;
     }
 }

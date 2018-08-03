@@ -37,6 +37,9 @@ public class RecommendedBidInfoPOJO {
     @SerializedName("delivered_on")
     @Expose
     private String deliveredOn;
+    @SerializedName("shipping_charge")
+    @Expose
+    private int shipping_charge;
     private boolean selected;
 
     public String getBidProductRecommendedId() {
@@ -133,5 +136,13 @@ public class RecommendedBidInfoPOJO {
 
     public void setSelected(boolean selected) {
         this.selected = selected;
+    }
+
+    public int getShipping_charge() {
+        return shipping_charge;
+    }
+
+    public void setShipping_charge(int shipping_charge) {
+        this.shipping_charge = shipping_charge;
     }
 }

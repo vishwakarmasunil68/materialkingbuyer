@@ -55,7 +55,7 @@ public class MyBidsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
             @Override
             public void onClick(View v) {
                 Intent intent=new Intent(context,OrderActivity.class);
-                intent.putExtra("MyOrdersPOJO",items.get(position));
+                intent.putExtra("order_id",items.get(position).getOrderId());
                 context.startActivity(intent);
             }
         });

@@ -7,11 +7,15 @@ package com.appentus.materialking.webservice;
 public class WebServiceUrl {
 
 
-    public static String BASEURL = "http://appentus.me/mk/appiqo_bid/";
-//    public static String BASEURL = "http://192.168.1.3/mk/appiqo_bid/";
+//    public static String BASEURL = "http://appentus.me/mk/appiqo_bid/";
+    public static String BASE_IP = "http://192.168.2.4";
+    public static String BASEURL = BASE_IP+"/mk/appiqo_bid/";
 
     public static String IMAGEBASEURL = BASEURL + "uploads/";
 
+    public static String getReceiptUrl(String order_id,String user_id,String seller_id){
+        return BASE_IP+"/mk/receipt1.php?order_id="+order_id+"&user_id="+user_id+"&seller_id="+seller_id;
+    }
 
     public static final String LOGINBUYER = BASEURL + "webservice_v2/login";
     public static final String create_user = BASEURL + "webservice_v2/create_user";
@@ -54,4 +58,5 @@ public class WebServiceUrl {
 
     public static final String GET_STATES_OF_INDIA = BASEURL + "SellerRegistration/getAllStatesofIndia";
     public static final String GET_CITIES = BASEURL + "SellerRegistration/getCitiesFromStates";
+    public static final String GET_ALL_SELECTED_OFFERS = BASEURL + "ProcessOrder/getBuyerSelectedOffers";
 }

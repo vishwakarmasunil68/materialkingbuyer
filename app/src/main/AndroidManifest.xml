@@ -7,6 +7,7 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.RECEIVE_SMS" />
     <uses-permission android:name="android.permission.READ_SMS" />
 
@@ -39,6 +40,7 @@
             android:resizeableActivity="false"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="stateHidden" />
+
 
         <meta-data
             android:name="io.fabric.ApiKey"
@@ -104,7 +106,8 @@
         <activity android:name=".views.activity.OrderItemBidProductActivity" />
         <activity android:name=".views.activity.NotificationActivity" />
         <activity android:name=".views.activity.NotificationBidInfoActivity" />
-        <activity android:name=".views.activity.SellerDetailActivity"></activity>
+        <activity android:name=".views.activity.SellerDetailActivity" />
+        <activity android:name=".views.activity.ReceiptActivity"></activity>
     </application>
 
 </manifest>

@@ -57,7 +57,7 @@ public class ViewDetailRecommendedAdapter extends RecyclerView.Adapter<RecyclerV
         RecommendtItemsAdapter mAdapter = null;
         if(items.get(position).getRecommendedBidInfoPOJOS()!=null
                 &&items.get(position).getRecommendedBidInfoPOJOS().size()>0){
-            holder1.rv_recommend_products.setLayoutManager(new LinearLayoutManager(context,LinearLayoutManager.HORIZONTAL,false));
+            holder1.rv_recommend_products.setLayoutManager(new LinearLayoutManager(context,LinearLayoutManager.VERTICAL,false));
             mAdapter = new RecommendtItemsAdapter(context,items.get(position), items.get(position).getRecommendedBidInfoPOJOS());
             holder1.rv_recommend_products.setAdapter(mAdapter);
             holder1.rv_recommend_products.setNestedScrollingEnabled(false);

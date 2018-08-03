@@ -45,7 +45,7 @@ public class OrderActivity extends AppCompatActivity {
 
     ViewPagerAdapter vpAdapter;
 
-    MyOrdersPOJO myOrdersPOJO;
+    String order_id;
 
 
     @Override
@@ -54,7 +54,7 @@ public class OrderActivity extends AppCompatActivity {
         setContentView(R.layout.activity_order);
         ButterKnife.bind(this);
 
-        myOrdersPOJO = (MyOrdersPOJO) getIntent().getSerializableExtra("MyOrdersPOJO");
+        order_id = getIntent().getStringExtra("order_id");
 
         setSupportActionBar(toolbar);
         getSupportActionBar().setTitle("Order Id: 1234567");
@@ -107,7 +107,7 @@ public class OrderActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(OrderActivity.this, OfferActivity.class);
-                intent.putExtra("order_id", myOrdersPOJO.getOrderId());
+                intent.putExtra("order_id", order_id);
                 startActivity(intent);
             }
         });
@@ -116,7 +116,7 @@ public class OrderActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(OrderActivity.this, OrderItemViewActivity.class);
-                intent.putExtra("order_id", myOrdersPOJO.getOrderId());
+                intent.putExtra("order_id", order_id);
                 startActivity(intent);
             }
         });
@@ -132,11 +132,11 @@ public class OrderActivity extends AppCompatActivity {
         public Fragment getItem(int position) {
             Fragment fragment = null;
             if (position == 0) {
-                fragment = new FragmentCompleteOrder(myOrdersPOJO);
+                fragment = new FragmentCompleteOrder(order_id);
             } else if (position == 1) {
-                fragment = new FragmentPartialOrder(myOrdersPOJO);
+                fragment = new FragmentPartialOrder(order_id);
             } else if (position == 2) {
-                fragment = new FragmentRecommendedOrder(myOrdersPOJO);
+                fragment = new FragmentRecommendedOrder(order_id);
             }
             return fragment;
         }

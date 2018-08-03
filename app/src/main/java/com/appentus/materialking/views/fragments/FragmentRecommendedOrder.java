@@ -44,10 +44,10 @@ public class FragmentRecommendedOrder extends Fragment {
 
     Unbinder unbinder;
 
-    MyOrdersPOJO myOrdersPOJO;
+    String order_id;
 
-    public FragmentRecommendedOrder(MyOrdersPOJO myOrdersPOJO){
-        this.myOrdersPOJO=myOrdersPOJO;
+    public FragmentRecommendedOrder(String order_id){
+        this.order_id=order_id;
     }
 
 
@@ -75,7 +75,7 @@ public class FragmentRecommendedOrder extends Fragment {
 
     public void getRecommendBids(){
         ArrayList<NameValuePair> nameValuePairs=new ArrayList<>();
-        nameValuePairs.add(new BasicNameValuePair("order_id",myOrdersPOJO.getOrderId() ));
+        nameValuePairs.add(new BasicNameValuePair("order_id",order_id));
         new WebServiceBaseResponseList<RecommendedBidPOJO>(nameValuePairs, getActivity(), new ResponseListCallback<RecommendedBidPOJO>() {
             @Override
             public void onGetMsg(ResponseListPOJO<RecommendedBidPOJO> responseListPOJO) {

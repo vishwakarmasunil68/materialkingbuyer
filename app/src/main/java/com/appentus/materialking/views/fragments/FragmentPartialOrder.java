@@ -42,10 +42,10 @@ public class FragmentPartialOrder extends Fragment {
     PartialOrderAdapter mAdapter;
     List<PartialOrderModel> partialOrderModels=new ArrayList<>();
 
-    MyOrdersPOJO myOrdersPOJO;
+    String order_id;
 
-    public FragmentPartialOrder(MyOrdersPOJO myOrdersPOJO){
-        this.myOrdersPOJO=myOrdersPOJO;
+    public FragmentPartialOrder(String order_id){
+        this.order_id=order_id;
     }
 
 
@@ -71,7 +71,7 @@ public class FragmentPartialOrder extends Fragment {
 
     public void callAPI(){
         ArrayList<NameValuePair> nameValuePairs=new ArrayList<>();
-        nameValuePairs.add(new BasicNameValuePair("order_id",myOrdersPOJO.getOrderId() ));
+        nameValuePairs.add(new BasicNameValuePair("order_id",order_id));
         new WebServiceBaseResponseList<PartialOrderModel>(nameValuePairs, getActivity(), new ResponseListCallback<PartialOrderModel>() {
             @Override
             public void onGetMsg(ResponseListPOJO<PartialOrderModel> responseListPOJO) {

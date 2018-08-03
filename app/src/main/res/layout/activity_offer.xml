@@ -36,6 +36,26 @@
         android:layout_height="wrap_content"
         android:layout_weight="1"></android.support.v7.widget.RecyclerView>
 
+
+    <LinearLayout
+        android:id="@+id/ll_price"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_total_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Total Price"/>
+
+        <TextView
+            android:id="@+id/tv_shipping_charges"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Total Price"/>
+
+    </LinearLayout>
     <Button
         android:id="@+id/btn_place_order"
         android:layout_width="match_parent"

@@ -73,7 +73,9 @@ public class RecommendtItemsAdapter extends RecyclerView.Adapter<RecyclerView.Vi
         Glide.with(context)
                 .load(WebServiceUrl.IMAGEBASEURL+items.get(position).getImage())
                 .into(holder1.iv_recommend_image);
-        holder1.tv_view_complete_amount.setText(items.get(position).getPriceHave()+" INR");
+        holder1.tv_view_complete_amount.setText("Offers: "+items.get(position).getPriceHave()+" INR");
+        holder1.tv_shipping_charges.setText("Shipping charges: "+items.get(position).getShipping_charge()+" INR");
+        holder1.tv_delivered_in.setText("Delivered: "+items.get(position).getDeliveredOn()+" days");
         holder1.tv_name.setText(items.get(position).getName());
 
         holder1.ll_recommend_product.setOnClickListener(new View.OnClickListener() {
@@ -126,6 +128,10 @@ public class RecommendtItemsAdapter extends RecyclerView.Adapter<RecyclerView.Vi
         AppCompatTextView tv_view_complete_amount;
         @BindView(R.id.tv_name)
         AppCompatTextView tv_name;
+        @BindView(R.id.tv_shipping_charges)
+        AppCompatTextView tv_shipping_charges;
+        @BindView(R.id.tv_delivered_in)
+        AppCompatTextView tv_delivered_in;
         @BindView(R.id.ll_recommend_product)
         LinearLayout ll_recommend_product;
         @BindView(R.id.btn_order)

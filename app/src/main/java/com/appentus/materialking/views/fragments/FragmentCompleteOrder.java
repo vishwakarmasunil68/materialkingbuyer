@@ -42,10 +42,10 @@ public class FragmentCompleteOrder extends Fragment {
     CompleteOrdersAdapter mAdapter;
     List<BidPOJO> completeOdersModels = new ArrayList<>();
     Unbinder unbinder;
-    MyOrdersPOJO myOrdersPOJO;
+    String order_id;
 
-    public FragmentCompleteOrder(MyOrdersPOJO myOrdersPOJO) {
-        this.myOrdersPOJO = myOrdersPOJO;
+    public FragmentCompleteOrder(String order_id) {
+        this.order_id = order_id;
     }
 
     @Nullable
@@ -56,7 +56,7 @@ public class FragmentCompleteOrder extends Fragment {
 
 
         recyclerCompleteOrders.setLayoutManager(new LinearLayoutManager(getActivity().getApplicationContext()));
-        mAdapter = new CompleteOrdersAdapter(getActivity(), completeOdersModels,myOrdersPOJO.getOrderId());
+        mAdapter = new CompleteOrdersAdapter(getActivity(), completeOdersModels,order_id);
         recyclerCompleteOrders.setAdapter(mAdapter);
 
 
@@ -68,7 +68,7 @@ public class FragmentCompleteOrder extends Fragment {
 
     public void getCompleteOrderDetail() {
         ArrayList<NameValuePair> nameValuePairs = new ArrayList<>();
-        nameValuePairs.add(new BasicNameValuePair("order_id", myOrdersPOJO.getOrderId()));
+        nameValuePairs.add(new BasicNameValuePair("order_id", order_id));
         new WebServiceBaseResponseList<BidPOJO>(nameValuePairs, getActivity(), new ResponseListCallback<BidPOJO>() {
             @Override
             public void onGetMsg(ResponseListPOJO<BidPOJO> responseListPOJO) {

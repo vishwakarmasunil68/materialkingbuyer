@@ -7,22 +7,14 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.appentus.materialking.R;
-import com.appentus.materialking.Util.ToastClass;
 import com.appentus.materialking.pojo.notification.NotificationPOJO;
 import com.appentus.materialking.views.activity.NotificationBidInfoActivity;
-import com.bumptech.glide.Glide;
+import com.appentus.materialking.views.activity.OrderActivity;
 
-import org.apache.http.NameValuePair;
-import org.apache.http.message.BasicNameValuePair;
-import org.json.JSONObject;
-
-import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.BindView;
@@ -57,7 +49,7 @@ public class NotificationAdapter extends RecyclerView.Adapter<NotificationAdapte
             holder.tv_message.setText("Buyer selected your bid item");
         } else if (items.get(position).getType().equalsIgnoreCase("2")) {
             holder.tv_message.setText("Seller Confirmed your bid");
-        }else if(items.get(position).getType().equalsIgnoreCase("0")){
+        } else if (items.get(position).getType().equalsIgnoreCase("0")) {
             holder.tv_message.setText("Seller placed bid");
         }
 
@@ -66,9 +58,15 @@ public class NotificationAdapter extends RecyclerView.Adapter<NotificationAdapte
         holder.ll_notification.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(activity, NotificationBidInfoActivity.class);
-                intent.putExtra("notification_id",items.get(position).getId());
-                activity.startActivity(intent);
+                if (items.get(position).getType().equals("0")) {
+                    Intent intent = new Intent(activity, OrderActivity.class);
+                    intent.putExtra("order_id", items.get(position).getOrderId());
+                    activity.startActivity(intent);
+                } else {
+                    Intent intent = new Intent(activity, NotificationBidInfoActivity.class);
+                    intent.putExtra("notification_id", items.get(position).getId());
+                    activity.startActivity(intent);
+                }
 //                ToastClass.showShortToast(activity.getApplicationContext(),items.get(position).getId());
             }
         });

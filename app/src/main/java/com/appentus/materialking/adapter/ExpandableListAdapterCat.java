@@ -15,7 +15,7 @@ import com.appentus.materialking.pojo.home.CategoryPOJO;
 import com.appentus.materialking.views.activity.MainActivity;
 import com.appentus.materialking.views.fragments.ResultPageFragment;
 import com.appentus.materialking.webservice.WebServiceUrl;
-import com.bumptech.glide.Glide;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -75,7 +75,7 @@ public class ExpandableListAdapterCat extends BaseExpandableListAdapter {
         ImageView iv_subcategoty_child = convertView.findViewById(R.id.iv_subcategoty_child);
         AppCompatTextView tv_subcategoty_child = convertView.findViewById(R.id.tv_subcategoty_child);
 
-        Glide.with(_context).load(WebServiceUrl.IMAGEBASEURL+categoryModelArrayList.get(groupPosition).getImage()).
+        Picasso.with(_context).load(WebServiceUrl.IMAGEBASEURL+categoryModelArrayList.get(groupPosition).getImage()).
                 into(iv_subcategoty_child);
 
         tv_subcategoty_child.setText(categoryModelArrayList.get(groupPosition).getSubCategoryPOJOS().get(childPosition).getName());
@@ -198,7 +198,7 @@ public class ExpandableListAdapterCat extends BaseExpandableListAdapter {
         }
 
 
-        Glide.with(_context).load(WebServiceUrl.IMAGEBASEURL+categoryModelArrayList.get(groupPosition).getImage()).
+        Picasso.with(_context).load(WebServiceUrl.IMAGEBASEURL+categoryModelArrayList.get(groupPosition).getImage()).
                 into(iv_categoty_group);
 
         tv_categoty_group.setText(categoryModelArrayList.get(groupPosition).getName());

@@ -22,7 +22,7 @@ import com.appentus.materialking.pojo.home.CategoryPOJO;
 import com.appentus.materialking.pojo.home.SubCategoryPOJO;
 import com.appentus.materialking.webservice.WebServiceUrl;
 import com.appentus.materialking.views.activity.MainActivity;
-import com.bumptech.glide.Glide;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -93,10 +93,10 @@ public class SingleCategorySelectedFragment extends Fragment {
         if(categoryPOJO.getSubCategoryPOJOS()!=null&&categoryPOJO.getSubCategoryPOJOS().size()>0) {
             categorySubHomeModels.addAll(categoryPOJO.getSubCategoryPOJOS());
 
-            Glide.with(getActivity()).load(WebServiceUrl.IMAGEBASEURL + categoryPOJO.getBanner()).
+            Picasso.with(getActivity()).load(WebServiceUrl.IMAGEBASEURL + categoryPOJO.getBanner()).
                     into(bannerImageView);
 
-            Glide.with(getActivity()).load(WebServiceUrl.IMAGEBASEURL + categoryPOJO.getImage()).
+            Picasso.with(getActivity()).load(WebServiceUrl.IMAGEBASEURL + categoryPOJO.getImage()).
                     into(catIconIm);
 
             catNameTv.setText(categoryPOJO.getName());

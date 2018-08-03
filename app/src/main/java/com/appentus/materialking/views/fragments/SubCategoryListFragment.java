@@ -16,7 +16,7 @@ import com.appentus.materialking.adapter.CategorySubHomeAdapter;
 import com.appentus.materialking.pojo.home.CategoryPOJO;
 import com.appentus.materialking.pojo.home.SubCategoryPOJO;
 import com.appentus.materialking.webservice.WebServiceUrl;
-import com.bumptech.glide.Glide;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -68,7 +68,7 @@ public class SubCategoryListFragment extends Fragment {
 
         if (categoryPOJO.getSubCategoryPOJOS() != null && categoryPOJO.getSubCategoryPOJOS().size() > 0) {
             categorySubHomeModels.addAll(categoryPOJO.getSubCategoryPOJOS());
-            Glide.with(getActivity()).load(WebServiceUrl.IMAGEBASEURL + categoryPOJO.getImage()).
+            Picasso.with(getActivity()).load(WebServiceUrl.IMAGEBASEURL + categoryPOJO.getImage()).
                     into(iv_cat);
 
             tv_cat_name.setText(categoryPOJO.getName());

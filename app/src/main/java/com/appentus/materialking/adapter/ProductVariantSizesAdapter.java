@@ -12,7 +12,7 @@ import android.widget.LinearLayout;
 import com.appentus.materialking.R;
 import com.appentus.materialking.pojo.home.VariationSizePOJO;
 import com.appentus.materialking.webservice.WebServiceUrl;
-import com.bumptech.glide.Glide;
+import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
@@ -40,7 +40,7 @@ public class ProductVariantSizesAdapter extends RecyclerView.Adapter<ProductVari
     @Override
     public void onBindViewHolder(final ViewHolder holder, final int position) {
 
-        Glide.with(activity.getApplicationContext())
+        Picasso.with(activity.getApplicationContext())
                 .load(WebServiceUrl.IMAGEBASEURL+items.get(position).getImage())
                 .into(holder.iv_size);
 

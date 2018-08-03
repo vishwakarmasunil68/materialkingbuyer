@@ -41,10 +41,10 @@ import com.appentus.materialking.utility.MyApplication;
 import com.appentus.materialking.utility.PrefsData;
 import com.appentus.materialking.utility.ProgressView;
 import com.appentus.materialking.webservice.WebServiceUrl;
-import com.bumptech.glide.Glide;
 import com.nguyenhoanglam.imagepicker.model.Config;
 import com.nguyenhoanglam.imagepicker.model.Image;
 import com.nguyenhoanglam.imagepicker.ui.imagepicker.ImagePicker;
+import com.squareup.picasso.Picasso;
 
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
@@ -308,7 +308,7 @@ public class FragmentProfile extends Fragment {
         if (MyApplication.readStringPref(PrefsData.image).equalsIgnoreCase("")) {
 
         } else {
-            Glide.with(getActivity())
+            Picasso.with(getActivity())
                     .load(WebServiceUrl.IMAGEBASEURL + MyApplication.readStringPref(PrefsData.image))
                     .into(ivEditProfilePic);
         }

@@ -17,7 +17,7 @@ import com.appentus.materialking.pojo.FinalOrderPOJO;
 import com.appentus.materialking.views.activity.ReceiptActivity;
 import com.appentus.materialking.views.activity.SellerDetailActivity;
 import com.appentus.materialking.webservice.WebServiceUrl;
-import com.bumptech.glide.Glide;
+import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
@@ -48,7 +48,7 @@ public class NotificationBidInfoAdapter extends RecyclerView.Adapter<Notificatio
     @Override
     public void onBindViewHolder(final ViewHolder holder, final int position) {
 
-        Glide.with(activity.getApplicationContext())
+        Picasso.with(activity.getApplicationContext())
                 .load(WebServiceUrl.IMAGEBASEURL + items.get(position).getBidProductInfo().getImage())
                 .into(holder.iv_product_image);
 
@@ -85,7 +85,7 @@ public class NotificationBidInfoAdapter extends RecyclerView.Adapter<Notificatio
         } else {
             holder.ll_recommended.setVisibility(View.VISIBLE);
             holder.tv_recommended_name.setText(items.get(position).getBidProductInfo().getOfferRecommendedProduct().getName());
-            Glide.with(activity.getApplicationContext())
+            Picasso.with(activity.getApplicationContext())
                     .load(WebServiceUrl.IMAGEBASEURL + items.get(position).getBidProductInfo().getOfferRecommendedProduct().getImage())
                     .into(holder.iv_product_recommended_image);
             holder.tv_price_placed.setText("Price :- " + items.get(position).getBidProductInfo().getOfferRecommendedProduct().getPriceHave() + " INR");

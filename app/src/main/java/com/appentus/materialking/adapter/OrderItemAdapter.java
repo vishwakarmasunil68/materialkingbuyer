@@ -14,7 +14,7 @@ import com.appentus.materialking.R;
 import com.appentus.materialking.pojo.OrderProductPOJO;
 import com.appentus.materialking.webservice.WebServiceUrl;
 import com.appentus.materialking.views.activity.OrderItemBidProductActivity;
-import com.bumptech.glide.Glide;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -50,7 +50,7 @@ public class OrderItemAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
     public void onBindViewHolder(RecyclerView.ViewHolder holder, final int position) {
         ViewHolder holder1 = (ViewHolder) holder;
 
-        Glide.with(context)
+        Picasso.with(context)
                 .load(WebServiceUrl.IMAGEBASEURL+items.get(position).getProductImage())
                 .into(holder1.iv_product);
 

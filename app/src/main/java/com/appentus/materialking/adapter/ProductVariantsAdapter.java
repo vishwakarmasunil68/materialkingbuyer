@@ -18,7 +18,7 @@ import com.appentus.materialking.utility.PrefsData;
 import com.appentus.materialking.webservice.WebServiceUrl;
 import com.appentus.materialking.webservice.WebServiceBase;
 import com.appentus.materialking.webservice.WebServicesCallBack;
-import com.bumptech.glide.Glide;
+import com.squareup.picasso.Picasso;
 
 import org.apache.http.NameValuePair;
 import org.apache.http.message.BasicNameValuePair;
@@ -56,7 +56,7 @@ public class ProductVariantsAdapter extends RecyclerView.Adapter<RecyclerView.Vi
         holder.tv_product_name.setText(items.get(position).getProductNumber());
         holder.tv_description.setText(items.get(position).getDescription());
 
-        Glide.with(context)
+        Picasso.with(context)
                 .load(WebServiceUrl.IMAGEBASEURL + items.get(position).getSizeImage())
                 .into(holder.iv_product_image);
 

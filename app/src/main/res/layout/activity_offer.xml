@@ -40,20 +40,32 @@
     <LinearLayout
         android:id="@+id/ll_price"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="80dp"
+        android:background="#30000000"
+        android:layout_gravity="center"
+        android:gravity="center_vertical"
         android:orientation="vertical">
 
         <TextView
             android:id="@+id/tv_total_price"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Total Price"/>
+            android:text="Total Price"
+            android:textColor="#FFFFFF"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:layout_marginLeft="15dp"/>
 
         <TextView
             android:id="@+id/tv_shipping_charges"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Total Price"/>
+            android:text="Total Price"
+            android:textColor="#FFFFFF"
+            android:textSize="16sp"
+            android:layout_marginTop="7dp"
+            android:textStyle="bold"
+            android:layout_marginLeft="15dp"/>
 
     </LinearLayout>
     <Button

@@ -17,7 +17,7 @@ import com.appentus.materialking.pojo.home.VariationPOJO;
 import com.appentus.materialking.pojo.home.VariationSizePOJO;
 import com.appentus.materialking.webservice.WebServiceUrl;
 import com.appentus.materialking.views.fragments.DetailItemFragment;
-import com.bumptech.glide.Glide;
+import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
@@ -51,7 +51,7 @@ public class ProductColorAdapter extends RecyclerView.Adapter<ProductColorAdapte
             Log.d(TagUtils.getTag(),"product color image:-"+ WebServiceUrl.IMAGEBASEURL+image);
 
             if (image.length() > 0) {
-                Glide.with(activity.getApplicationContext())
+                Picasso.with(activity.getApplicationContext())
                         .load(WebServiceUrl.IMAGEBASEURL + image)
                         .into(holder.view);
             } else {

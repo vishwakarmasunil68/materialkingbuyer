@@ -8,7 +8,8 @@ public class WebServiceUrl {
 
 
 //    public static String BASEURL = "http://appentus.me/mk/appiqo_bid/";
-    public static String BASE_IP = "http://192.168.2.4";
+//    public static String BASE_IP = "http://192.168.2.4";
+    public static String BASE_IP = "http://appentus.me";
     public static String BASEURL = BASE_IP+"/mk/appiqo_bid/";
 
     public static String IMAGEBASEURL = BASEURL + "uploads/";

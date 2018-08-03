@@ -12,7 +12,7 @@ import com.appentus.materialking.pojo.ResponsePOJO;
 import com.appentus.materialking.webservice.WebServiceUrl;
 import com.appentus.materialking.webservice.ResponseCallBack;
 import com.appentus.materialking.webservice.WebServiceBaseResponse;
-import com.bumptech.glide.Glide;
+import com.squareup.picasso.Picasso;
 
 import org.apache.http.NameValuePair;
 import org.apache.http.message.BasicNameValuePair;
@@ -80,7 +80,7 @@ public class RecommendedProductDetailActivity extends AppCompatActivity {
                         tv_product_quantity.setText(responsePOJO.getResult().getQuantityHave());
                         tv_dod.setText(String.valueOf(responsePOJO.getResult().getDeliveredOn()));
 
-                        Glide.with(getApplicationContext())
+                        Picasso.with(getApplicationContext())
                                 .load(WebServiceUrl.IMAGEBASEURL+responsePOJO.getResult().getImage())
                                 .into(iv_product_image);
 

@@ -19,7 +19,7 @@ import com.appentus.materialking.pojo.RecommendedBidInfoPOJO;
 import com.appentus.materialking.webservice.WebServiceUrl;
 import com.appentus.materialking.views.activity.RecommendedProductDetailActivity;
 import com.appentus.materialking.views.activity.ViewOrderRecommended;
-import com.bumptech.glide.Glide;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -70,7 +70,7 @@ public class RecommendtItemsAdapter extends RecyclerView.Adapter<RecyclerView.Vi
 //            checkBoxes.add(holder1.check_recommend_selected);
 //        }
 
-        Glide.with(context)
+        Picasso.with(context)
                 .load(WebServiceUrl.IMAGEBASEURL+items.get(position).getImage())
                 .into(holder1.iv_recommend_image);
         holder1.tv_view_complete_amount.setText("Offers: "+items.get(position).getPriceHave()+" INR");

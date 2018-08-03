@@ -14,7 +14,7 @@ import com.appentus.materialking.pojo.cart.CartItemPOJO;
 import com.appentus.materialking.webservice.WebServiceUrl;
 import com.appentus.materialking.webservice.WebServiceBase;
 import com.appentus.materialking.webservice.WebServicesCallBack;
-import com.bumptech.glide.Glide;
+import com.squareup.picasso.Picasso;
 
 import org.apache.http.NameValuePair;
 import org.apache.http.message.BasicNameValuePair;
@@ -140,7 +140,7 @@ public class CartListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
             }
         });
 
-        Glide.with(context).load(WebServiceUrl.IMAGEBASEURL + resultFoundModels.get(position).getProductSizeImage()).
+        Picasso.with(context).load(WebServiceUrl.IMAGEBASEURL + resultFoundModels.get(position).getProductSizeImage()).
                 into(holder1.iv_item_image_cart);
 
     }

@@ -15,7 +15,7 @@ import com.appentus.materialking.model.SubCategories;
 import com.appentus.materialking.webservice.WebServiceUrl;
 import com.appentus.materialking.views.activity.MainActivity;
 import com.appentus.materialking.views.fragments.ResultPageFragment;
-import com.bumptech.glide.Glide;
+import com.squareup.picasso.Picasso;
 import com.thoughtbot.expandablerecyclerview.ExpandableRecyclerViewAdapter;
 import com.thoughtbot.expandablerecyclerview.models.ExpandableGroup;
 import com.thoughtbot.expandablerecyclerview.viewholders.ChildViewHolder;
@@ -106,7 +106,7 @@ public class CategoryDrawerAdapter extends ExpandableRecyclerViewAdapter<Categor
         public void setCategoryNow(ExpandableGroup mainCategory) {
             if (mainCategory instanceof MainCategories) {
                 tvCcategotyName.setText(((MainCategories) mainCategory).getCategory());
-                Glide.with(context).load(WebServiceUrl.IMAGEBASEURL+((MainCategories) mainCategory).getCategoryImg()).
+                Picasso.with(context).load(WebServiceUrl.IMAGEBASEURL+((MainCategories) mainCategory).getCategoryImg()).
                         into(imageCategory);
 
             }
@@ -156,7 +156,7 @@ public class CategoryDrawerAdapter extends ExpandableRecyclerViewAdapter<Categor
 
         public void setSubCateroryImage(String subCategory) {
 
-            Glide.with(context).load(WebServiceUrl.IMAGEBASEURL+subCategory).
+            Picasso.with(context).load(WebServiceUrl.IMAGEBASEURL+subCategory).
                     into(imageSubcategory);
         }
     }

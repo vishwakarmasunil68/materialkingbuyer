@@ -43,8 +43,8 @@ import com.appentus.materialking.views.activity.MainActivity;
 import com.appentus.materialking.views.activity.ProductImageViewActivity;
 import com.appentus.materialking.webservice.WebServiceBase;
 import com.appentus.materialking.webservice.WebServicesCallBack;
-import com.bumptech.glide.Glide;
 import com.github.javiersantos.materialstyleddialogs.MaterialStyledDialog;
+import com.squareup.picasso.Picasso;
 
 import org.apache.http.NameValuePair;
 import org.apache.http.message.BasicNameValuePair;
@@ -277,7 +277,7 @@ public class DetailItemFragment extends Fragment {
 
     public void setImageVIew(String url) {
         this.image_url = url;
-        Glide.with(getActivity().getApplicationContext())
+        Picasso.with(getActivity().getApplicationContext())
                 .load(url)
                 .into(iv_product_image);
     }
@@ -290,7 +290,7 @@ public class DetailItemFragment extends Fragment {
         String image = getImageFromVariation(variationPOJO);
 
         if (image.length() > 0) {
-            Glide.with(getActivity().getApplicationContext())
+            Picasso.with(getActivity().getApplicationContext())
                     .load(WebServiceUrl.IMAGEBASEURL + image)
                     .into(iv_product_image);
         } else {
@@ -304,7 +304,7 @@ public class DetailItemFragment extends Fragment {
         String image = getImageFromVariation(variationPOJO);
         spinner_color.setSelection(position+1);
         if (image.length() > 0) {
-            Glide.with(getActivity().getApplicationContext())
+            Picasso.with(getActivity().getApplicationContext())
                     .load(WebServiceUrl.IMAGEBASEURL + image)
                     .into(iv_product_image);
         } else {

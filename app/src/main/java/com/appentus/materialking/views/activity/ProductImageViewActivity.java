@@ -4,8 +4,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 import com.appentus.materialking.R;
-import com.bumptech.glide.Glide;
 import com.jsibbold.zoomage.ZoomageView;
+import com.squareup.picasso.Picasso;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -26,7 +26,7 @@ public class ProductImageViewActivity extends AppCompatActivity {
         Bundle bundle=getIntent().getExtras();
         if(bundle!=null){
             image_url=bundle.getString("url");
-            Glide.with(getApplicationContext())
+            Picasso.with(getApplicationContext())
                     .load(image_url)
                     .into(myZoomageView);
         }

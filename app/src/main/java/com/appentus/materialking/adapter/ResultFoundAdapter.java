@@ -16,7 +16,7 @@ import com.appentus.materialking.utility.Utilis;
 import com.appentus.materialking.webservice.WebServiceUrl;
 import com.appentus.materialking.views.activity.MainActivity;
 import com.appentus.materialking.views.fragments.DetailItemFragment;
-import com.bumptech.glide.Glide;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -66,7 +66,7 @@ public class ResultFoundAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
         });
 
 
-        Glide.with(context).load(WebServiceUrl.IMAGEBASEURL+resultFoundModels.get(position).getImage()).
+        Picasso.with(context).load(WebServiceUrl.IMAGEBASEURL+resultFoundModels.get(position).getImage()).
                 into(holder1.subcategoryImage);
 
 

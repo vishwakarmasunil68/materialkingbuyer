@@ -19,7 +19,7 @@ import com.appentus.materialking.views.activity.SellerDetailActivity;
 import com.appentus.materialking.webservice.WebServiceBase;
 import com.appentus.materialking.webservice.WebServiceUrl;
 import com.appentus.materialking.webservice.WebServicesCallBack;
-import com.bumptech.glide.Glide;
+import com.squareup.picasso.Picasso;
 
 import org.apache.http.NameValuePair;
 import org.apache.http.message.BasicNameValuePair;
@@ -58,7 +58,7 @@ public class OfferAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
         holder1.tvViewCompleteName.setText(items.get(position).getName());
         holder1.tvViewCompleteAmount.setText("Offers: " + items.get(position).getPriceHave() + " INR");
 
-        Glide.with(context)
+        Picasso.with(context)
                 .load(WebServiceUrl.IMAGEBASEURL + items.get(position).getImage())
                 .into(holder1.iv_product_image);
 
@@ -68,7 +68,7 @@ public class OfferAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
             holder1.tv_rec_name.setText(items.get(position).getRecommendedBidInfoPOJO().getName());
             holder1.tv_rec_price.setText(items.get(position).getRecommendedBidInfoPOJO().getPriceHave());
 
-            Glide.with(context)
+            Picasso.with(context)
                     .load(WebServiceUrl.IMAGEBASEURL + items.get(position).getRecommendedBidInfoPOJO().getImage())
                     .into(holder1.iv_rec_image);
 

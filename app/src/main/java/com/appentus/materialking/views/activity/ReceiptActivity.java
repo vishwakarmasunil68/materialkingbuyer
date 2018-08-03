@@ -214,32 +214,32 @@ public class ReceiptActivity extends AppCompatActivity {
                 if (f != null) {
                     if (f.exists()) {
                         Log.d(TagUtils.getTag(), "file path:-" + f.getPath());
-//                        MimeTypeMap mime = MimeTypeMap.getSingleton();
-//                        String ext = f.getName().substring(f.getName().lastIndexOf(".") + 1);
-//                        String type = mime.getMimeTypeFromExtension(ext);
-//                        Intent intent = new Intent(Intent.ACTION_VIEW);
-//                        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
-//                            intent.setFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
-//                            Uri contentUri = FileProvider.getUriForFile(getApplicationContext(), getPackageName()+".fileProvider", f);
-//                            intent.setDataAndType(contentUri, type);
-//                            intent.setFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
-//                            grantAllUriPermissions(intent, contentUri);
-//                        } else {
-//                            intent.setDataAndType(Uri.fromFile(f), type);
-//                            intent.setFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
-//                            grantAllUriPermissions(intent, Uri.fromFile(f));
+                        MimeTypeMap mime = MimeTypeMap.getSingleton();
+                        String ext = f.getName().substring(f.getName().lastIndexOf(".") + 1);
+                        String type = mime.getMimeTypeFromExtension(ext);
+                        Intent intent = new Intent(Intent.ACTION_VIEW);
+                        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+                            intent.setFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
+                            Uri contentUri = FileProvider.getUriForFile(getApplicationContext(), getPackageName()+".fileProvider", f);
+                            intent.setDataAndType(contentUri, type);
+                            intent.setFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
+                            grantAllUriPermissions(intent, contentUri);
+                        } else {
+                            intent.setDataAndType(Uri.fromFile(f), type);
+                            intent.setFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
+                            grantAllUriPermissions(intent, Uri.fromFile(f));
+                        }
+                        startActivity(intent);
+//                        Uri path = Uri.fromFile(f);
+//                        Intent pdfOpenintent = new Intent(Intent.ACTION_VIEW);
+//                        pdfOpenintent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+//                        pdfOpenintent.setDataAndType(path, "application/pdf");
+//                        try {
+//                            startActivity(pdfOpenintent);
 //                        }
-//                        startActivity(intent);
-                        Uri path = Uri.fromFile(f);
-                        Intent pdfOpenintent = new Intent(Intent.ACTION_VIEW);
-                        pdfOpenintent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                        pdfOpenintent.setDataAndType(path, "application/pdf");
-                        try {
-                            startActivity(pdfOpenintent);
-                        }
-                        catch (ActivityNotFoundException e) {
-
-                        }
+//                        catch (ActivityNotFoundException e) {
+//
+//                        }
                     }
                 }
             }

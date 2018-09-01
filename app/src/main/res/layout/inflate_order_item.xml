@@ -6,7 +6,6 @@
     android:orientation="vertical"
     android:padding="10dp">
 
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -14,37 +13,165 @@
 
         <ImageView
             android:id="@+id/iv_product"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:adjustViewBounds="true"
+            android:scaleType="fitXY"
             android:src="@drawable/ic_default_category" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:layout_marginLeft="10dp">
+            android:layout_marginLeft="7dp">
 
-            <TextView
-                android:id="@+id/tv_product_name"
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Product Name"
-                android:textSize="16sp" />
+                android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/tv_product_description"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Product Description"
-                android:layout_marginTop="5dp"/>
+                <android.support.v7.widget.AppCompatTextView
+                    android:id="@+id/tv_product_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Product Name"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:id="@+id/ll_brand"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:orientation="horizontal"
+                    android:weightSum="3">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Brand"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=":" />
+
+                    <TextView
+                        android:id="@+id/tv_brand"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="7dp"
+                        android:layout_weight="2"
+                        android:text="Brand" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ll_size"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="3">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Size"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=":" />
+
+                    <TextView
+                        android:id="@+id/tv_size"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="7dp"
+                        android:layout_weight="2"
+                        android:text="Size" />
+
+                </LinearLayout>
+
+            </LinearLayout>
 
         </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="5dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="right"
+            android:gravity="right">
+
+            <TextView
+                android:id="@+id/tv_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Date time" />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_gravity="right"
+            android:gravity="right">
+
+            <TextView
+                android:id="@+id/tv_bid_placed"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Bid Placed"
+                android:visibility="gone"
+                android:background="#30000FFF"
+                android:padding="5dp"/>
+
+            <TextView
+                android:id="@+id/tv_product_selected"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Product Selected"
+                android:visibility="gone"
+                android:background="#30008800"
+                android:padding="5dp"/>
+
+            <TextView
+                android:id="@+id/tv_no_bid_placed"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="No Bid Placed"
+                android:visibility="gone"
+                android:background="#30FF0000"
+                android:padding="5dp"/>
+
+        </LinearLayout>
+
+
+        <TextView
+            android:id="@+id/tv_description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Description" />
     </LinearLayout>
 
     <View
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:layout_marginTop="7dp"
-        android:background="#30000000"/>
+        android:background="#30000000" />
 
 </LinearLayout>

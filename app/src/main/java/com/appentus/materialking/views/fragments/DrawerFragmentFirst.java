@@ -16,6 +16,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ExpandableListView;
+import android.widget.LinearLayout;
 
 import com.appentus.materialking.R;
 import com.appentus.materialking.Util.ToastClass;
@@ -28,6 +29,7 @@ import com.appentus.materialking.utility.NonScrollExpandableListView;
 import com.appentus.materialking.utility.PrefsData;
 import com.appentus.materialking.views.activity.LoginActivity;
 import com.appentus.materialking.views.activity.MainActivity;
+import com.appentus.materialking.views.activity.OrderItemViewActivity;
 import com.thoughtbot.expandablerecyclerview.listeners.GroupExpandCollapseListener;
 import com.thoughtbot.expandablerecyclerview.listeners.OnGroupClickListener;
 import com.thoughtbot.expandablerecyclerview.models.ExpandableGroup;
@@ -56,6 +58,8 @@ public class DrawerFragmentFirst extends Fragment {
     public static List<MainCategories> mainCategories;
     @BindView(R.id.btLogout)
     AppCompatButton btLogout;
+    @BindView(R.id.ll_my_orders)
+    LinearLayout ll_my_orders;
 
 
     public static NonScrollExpandableListView lvExpCategory;
@@ -93,6 +97,16 @@ public class DrawerFragmentFirst extends Fragment {
             }
         });
 
+        ll_my_orders.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+//                if(getActivity() instanceof MainActivity){
+//                    MainActivity mainActivity= (MainActivity) getActivity();
+//                    mainActivity.addFragmentHome(new OrderItemsFragment(),"orderItemFragment");
+//                }
+                startActivity(new Intent(getActivity(), OrderItemViewActivity.class));
+            }
+        });
 
 
         // preparing list data

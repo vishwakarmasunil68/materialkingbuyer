@@ -19,6 +19,9 @@ public class BidInfoPOJO implements Serializable{
     @SerializedName("product_id")
     @Expose
     private String productId;
+    @SerializedName("product_variation_id")
+    @Expose
+    private String product_variation_id;
     @SerializedName("name")
     @Expose
     private String name;
@@ -28,6 +31,15 @@ public class BidInfoPOJO implements Serializable{
     @SerializedName("image")
     @Expose
     private String image;
+    @SerializedName("size_image")
+    @Expose
+    private String size_image;
+    @SerializedName("brand_name")
+    @Expose
+    private String brand_name;
+    @SerializedName("size_name")
+    @Expose
+    private String size_name;
     @SerializedName("price")
     @Expose
     private String price;
@@ -246,5 +258,37 @@ public class BidInfoPOJO implements Serializable{
 
     public void setOfferRecommendedProduct(RecommendedBidInfoPOJO offerRecommendedProduct) {
         this.offerRecommendedProduct = offerRecommendedProduct;
+    }
+
+    public String getProduct_variation_id() {
+        return product_variation_id;
+    }
+
+    public void setProduct_variation_id(String product_variation_id) {
+        this.product_variation_id = product_variation_id;
+    }
+
+    public String getSize_image() {
+        return size_image;
+    }
+
+    public void setSize_image(String size_image) {
+        this.size_image = size_image;
+    }
+
+    public String getBrand_name() {
+        return brand_name;
+    }
+
+    public void setBrand_name(String brand_name) {
+        this.brand_name = brand_name;
+    }
+
+    public String getSize_name() {
+        return size_name;
+    }
+
+    public void setSize_name(String size_name) {
+        this.size_name = size_name;
     }
 }

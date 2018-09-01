@@ -9,12 +9,16 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.CompoundButton;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.appentus.materialking.R;
 import com.appentus.materialking.model.ViewDetailCompleteModel;
 import com.appentus.materialking.pojo.BidInfoPOJO;
 import com.appentus.materialking.views.activity.ViewDetailsCompleteOrder;
 import com.appentus.materialking.views.activity.ViewDetailsPartialOrder;
+import com.appentus.materialking.webservice.WebServiceUrl;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -46,6 +50,14 @@ public class ViewDetailCompleteAdapter extends RecyclerView.Adapter<RecyclerView
     @Override
     public void onBindViewHolder(RecyclerView.ViewHolder holder, final int position) {
         ViewHolder holder1 = (ViewHolder) holder;
+
+        Picasso.with(context)
+                .load(WebServiceUrl.IMAGEBASEURL+viewDetailCompleteModels.get(position).getSize_image())
+                .into(holder1.iv_item_image_cart);
+
+        holder1.tv_brand.setText(viewDetailCompleteModels.get(position).getBrand_name());
+        holder1.tv_size.setText(viewDetailCompleteModels.get(position).getSize_name());
+
         holder1.tvViewCompleteName.setText(viewDetailCompleteModels.get(position).getName());
         holder1.tvViewCompleteAmount.setText("Offers: "+viewDetailCompleteModels.get(position).getPriceHave()+" INR");
         holder1.btn_order.setOnClickListener(new View.OnClickListener() {
@@ -74,6 +86,13 @@ public class ViewDetailCompleteAdapter extends RecyclerView.Adapter<RecyclerView
         AppCompatTextView tvViewCompleteAmount;
         @BindView(R.id.btn_order)
         Button btn_order;
+        @BindView(R.id.iv_item_image_cart)
+        ImageView iv_item_image_cart;
+        @BindView(R.id.tv_brand)
+        TextView tv_brand;
+        @BindView(R.id.tv_size)
+        TextView tv_size;
+
         public ViewHolder(View itemView) {
             super(itemView);
             ButterKnife.bind(this, itemView);

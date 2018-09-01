@@ -1,5 +1,8 @@
 package com.appentus.materialking.pojo.cart;
 
+import com.appentus.materialking.pojo.home.BrandPOJO;
+import com.appentus.materialking.pojo.home.SizePOJO;
+import com.appentus.materialking.pojo.home.TypePOJO;
 import com.google.gson.annotations.SerializedName;
 
 public class CartItemPOJO {
@@ -35,6 +38,12 @@ public class CartItemPOJO {
     private String sizeName;
     @SerializedName("product_size_image")
     private String productSizeImage;
+    @SerializedName("size_detail")
+    private SizePOJO size_detail;
+    @SerializedName("brand_detail")
+    private BrandPOJO brand_detail;
+    @SerializedName("type_detail")
+    private TypePOJO type_detail;
 
     public String getCartId() {
         return cartId;
@@ -162,5 +171,29 @@ public class CartItemPOJO {
 
     public void setProductSizeImage(String productSizeImage) {
         this.productSizeImage = productSizeImage;
+    }
+
+    public SizePOJO getSize_detail() {
+        return size_detail;
+    }
+
+    public void setSize_detail(SizePOJO size_detail) {
+        this.size_detail = size_detail;
+    }
+
+    public BrandPOJO getBrand_detail() {
+        return brand_detail;
+    }
+
+    public void setBrand_detail(BrandPOJO brand_detail) {
+        this.brand_detail = brand_detail;
+    }
+
+    public TypePOJO getType_detail() {
+        return type_detail;
+    }
+
+    public void setType_detail(TypePOJO type_detail) {
+        this.type_detail = type_detail;
     }
 }

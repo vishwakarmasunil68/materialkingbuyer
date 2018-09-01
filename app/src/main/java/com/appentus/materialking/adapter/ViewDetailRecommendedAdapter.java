@@ -10,6 +10,8 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.appentus.materialking.R;
 import com.appentus.materialking.interfaces.OnItemCheckedListener;
@@ -17,6 +19,8 @@ import com.appentus.materialking.model.ViewDetailRecommendedModel;
 import com.appentus.materialking.pojo.BidInfoPOJO;
 import com.appentus.materialking.pojo.RecommendedBidInfoPOJO;
 import com.appentus.materialking.views.activity.ViewOrderRecommended;
+import com.appentus.materialking.webservice.WebServiceUrl;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -54,6 +58,15 @@ public class ViewDetailRecommendedAdapter extends RecyclerView.Adapter<RecyclerV
         }else{
             holder1.tv_replacement.setVisibility(View.GONE);
         }
+
+        Picasso.with(context)
+                .load(WebServiceUrl.IMAGEBASEURL+items.get(position).getSize_image())
+                .into(holder1.iv_product_image);
+
+        holder1.tv_brand.setText(items.get(position).getBrand_name());
+        holder1.tv_size.setText(items.get(position).getSize_name());
+
+
         RecommendtItemsAdapter mAdapter = null;
         if(items.get(position).getRecommendedBidInfoPOJOS()!=null
                 &&items.get(position).getRecommendedBidInfoPOJOS().size()>0){
@@ -113,6 +126,15 @@ public class ViewDetailRecommendedAdapter extends RecyclerView.Adapter<RecyclerV
         RecyclerView rv_recommend_products;
         @BindView(R.id.bt_order)
         Button bt_order;
+
+        @BindView(R.id.iv_product_image)
+        ImageView iv_product_image;
+        @BindView(R.id.tv_brand)
+        TextView tv_brand;
+        @BindView(R.id.tv_size)
+        TextView tv_size;
+
+
         public ViewHolder(View itemView) {
             super(itemView);
             ButterKnife.bind(this, itemView);

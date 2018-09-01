@@ -49,11 +49,13 @@ public class NotificationBidInfoAdapter extends RecyclerView.Adapter<Notificatio
     public void onBindViewHolder(final ViewHolder holder, final int position) {
 
         Picasso.with(activity.getApplicationContext())
-                .load(WebServiceUrl.IMAGEBASEURL + items.get(position).getBidProductInfo().getImage())
+                .load(WebServiceUrl.IMAGEBASEURL + items.get(position).getBidProductInfo().getSize_image())
                 .into(holder.iv_product_image);
 
 
         holder.tv_product_name.setText(items.get(position).getBidProductInfo().getName());
+        holder.tv_size.setText(items.get(position).getBidProductInfo().getSize_name());
+        holder.tv_brand.setText(items.get(position).getBidProductInfo().getBrand_name());
 
 //        if (items.get(position).getSellerStatus().equalsIgnoreCase("0")) {
 //            holder.tv_status.setText("PENDING");
@@ -135,6 +137,10 @@ public class NotificationBidInfoAdapter extends RecyclerView.Adapter<Notificatio
         ImageView iv_product_recommended_image;
         @BindView(R.id.tv_recommended_name)
         TextView tv_recommended_name;
+        @BindView(R.id.tv_brand)
+        TextView tv_brand;
+        @BindView(R.id.tv_size)
+        TextView tv_size;
 
         public ViewHolder(View itemView) {
             super(itemView);

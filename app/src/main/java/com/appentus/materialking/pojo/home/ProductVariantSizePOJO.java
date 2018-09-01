@@ -47,6 +47,10 @@ public class ProductVariantSizePOJO {
     private String productVariationId;
     @SerializedName("qty")
     private String qty;
+    @SerializedName("variation_image")
+    private String variation_image;
+    @SerializedName("size_detail")
+    private SizePOJO size_detail;
 
     public String getProductId() {
         return productId;
@@ -222,5 +226,21 @@ public class ProductVariantSizePOJO {
 
     public void setQty(String qty) {
         this.qty = qty;
+    }
+
+    public String getVariation_image() {
+        return variation_image;
+    }
+
+    public void setVariation_image(String variation_image) {
+        this.variation_image = variation_image;
+    }
+
+    public SizePOJO getSize_detail() {
+        return size_detail;
+    }
+
+    public void setSize_detail(SizePOJO size_detail) {
+        this.size_detail = size_detail;
     }
 }

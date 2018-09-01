@@ -55,7 +55,11 @@ public class OrderItemViewActivity extends AppCompatActivity {
 
     public void callAPI(){
         ArrayList<NameValuePair> nameValuePairs=new ArrayList<>();
-        nameValuePairs.add(new BasicNameValuePair("order_id",order_id));
+        if(order_id!=null) {
+            nameValuePairs.add(new BasicNameValuePair("order_id", order_id));
+        }else{
+            nameValuePairs.add(new BasicNameValuePair("order_id", "all"));
+        }
         new WebServiceBaseResponseList<OrderProductPOJO>(nameValuePairs, this, new ResponseListCallback<OrderProductPOJO>() {
             @Override
             public void onGetMsg(ResponseListPOJO<OrderProductPOJO> responseListPOJO) {

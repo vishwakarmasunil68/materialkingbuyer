@@ -6,16 +6,19 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.appentus.materialking.R;
+import com.appentus.materialking.Util.TagUtils;
 import com.appentus.materialking.adapter.ProductVariantsAdapter;
 import com.appentus.materialking.pojo.ResponseListPOJO;
 import com.appentus.materialking.pojo.home.CategoryPOJO;
 import com.appentus.materialking.pojo.home.ProductVariantSizePOJO;
 import com.appentus.materialking.pojo.home.SubCategoryPOJO;
+import com.appentus.materialking.pojo.product.FilterProductPOJO;
 import com.appentus.materialking.webservice.WebServiceUrl;
 import com.appentus.materialking.webservice.ResponseListCallback;
 import com.appentus.materialking.webservice.WebServiceBaseResponseList;
@@ -42,7 +45,7 @@ public class CategoryProductListFragment extends Fragment{
     String size_id;
 
     ProductVariantsAdapter mAdapter;
-    List<ProductVariantSizePOJO> productVariantSizePOJOS = new ArrayList<>();
+    List<FilterProductPOJO> productVariantSizePOJOS = new ArrayList<>();
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -56,6 +59,13 @@ public class CategoryProductListFragment extends Fragment{
         size_id=getArguments().getString("size_id","0");
         type_id=getArguments().getString("type_id","0");
         color_id=getArguments().getString("color_id","0");
+
+        Log.d(TagUtils.getTag(),"brand_id:-"+brand_id);
+        Log.d(TagUtils.getTag(),"size_id:-"+size_id);
+        Log.d(TagUtils.getTag(),"type_id:-"+type_id);
+        Log.d(TagUtils.getTag(),"color_id:-"+color_id);
+        Log.d(TagUtils.getTag(),"category_id:-"+categoryPOJO.getId());
+        Log.d(TagUtils.getTag(),"subcategory_id:-"+subCategoryPOJO.getId());
 
         return view;
     }
@@ -81,9 +91,9 @@ public class CategoryProductListFragment extends Fragment{
         nameValuePairs.add(new BasicNameValuePair("type_id",type_id));
         nameValuePairs.add(new BasicNameValuePair("color_id",color_id));
         nameValuePairs.add(new BasicNameValuePair("size_id",size_id));
-        new WebServiceBaseResponseList<ProductVariantSizePOJO>(nameValuePairs, getActivity(), new ResponseListCallback<ProductVariantSizePOJO>() {
+        new WebServiceBaseResponseList<FilterProductPOJO>(nameValuePairs, getActivity(), new ResponseListCallback<FilterProductPOJO>() {
             @Override
-            public void onGetMsg(ResponseListPOJO<ProductVariantSizePOJO> responseListPOJO) {
+            public void onGetMsg(ResponseListPOJO<FilterProductPOJO> responseListPOJO) {
                 try{
                     if(responseListPOJO.isSuccess()){
                         productVariantSizePOJOS.clear();
@@ -94,6 +104,6 @@ public class CategoryProductListFragment extends Fragment{
                     e.printStackTrace();
                 }
             }
-        },ProductVariantSizePOJO.class,"GET_PRODUCTS",true).execute(WebServiceUrl.GET_PRODUCT_FULL_DETAIL_BY_FILTERS);
+        },FilterProductPOJO.class,"GET_PRODUCTS",true).execute(WebServiceUrl.GET_FILTER_PRODUCTS);
     }
 }

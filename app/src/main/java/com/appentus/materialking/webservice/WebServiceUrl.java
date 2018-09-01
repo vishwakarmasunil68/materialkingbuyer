@@ -8,7 +8,7 @@ public class WebServiceUrl {
 
 
 //    public static String BASEURL = "http://appentus.me/mk/appiqo_bid/";
-//    public static String BASE_IP = "http://192.168.2.4";
+//    public static String BASE_IP = "http://192.168.1.4";
     public static String BASE_IP = "http://appentus.me";
     public static String BASEURL = BASE_IP+"/mk/appiqo_bid/";
 
@@ -33,8 +33,10 @@ public class WebServiceUrl {
     public static final String CART_LIST = BASEURL + "webservice_v2/get_my_cart_detail";
     public static final String GENERATE_MY_ORDER = BASEURL + "webservice_v2/generate_my_order";
     public static final String MY_ORDER_LIST = BASEURL + "webservice_v2/get_all_orders_for_buyer";
-    public static final String GET_FILTERS = BASEURL + "webservice_v2/get_filers_for_product";
+//    public static final String GET_FILTERS = BASEURL + "webservice_v2/get_filers_for_product";
+    public static final String GET_FILTERS = BASEURL + "FilterCtrl/getFilters";
     public static final String GET_PRODUCT_FULL_DETAIL_BY_FILTERS = BASEURL + "webservice_v2/get_product_full_detail_by_filers";
+    public static final String GET_FILTER_PRODUCTS = BASEURL + "webservice_v2/getProductByFilters";
     public static final String GET_SELLER_TYPE = BASEURL + "webservice_v2/get_all_seller_type";
     public static final String GET_SELLER_TYPES = BASEURL + "SellerRegistration/getSellerTypes";
     public static final String GET_ORDER_PARTIALS_FOR_BUYER = BASEURL + "webservice_v2/get_orders_partial_for_buyer";

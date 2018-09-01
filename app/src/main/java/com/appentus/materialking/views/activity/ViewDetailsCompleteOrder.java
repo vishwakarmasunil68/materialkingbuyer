@@ -172,6 +172,7 @@ public class ViewDetailsCompleteOrder extends AppCompatActivity {
         nameValuePairs.add(new BasicNameValuePair("product_id", bidInfoPOJO.getProductId()));
         nameValuePairs.add(new BasicNameValuePair("bid_product_id", bidInfoPOJO.getBidProductId()));
         nameValuePairs.add(new BasicNameValuePair("bid_product_recommended_id", "0"));
+        nameValuePairs.add(new BasicNameValuePair("product_variation_id", bidInfoPOJO.getProduct_variation_id()));
         nameValuePairs.add(new BasicNameValuePair("seller_id", seller_id));
         nameValuePairs.add(new BasicNameValuePair("user_id", MyApplication.readStringPref(PrefsData.PREF_USERID)));
 

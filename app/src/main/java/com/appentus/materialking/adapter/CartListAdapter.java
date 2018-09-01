@@ -7,12 +7,14 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import com.appentus.materialking.R;
 import com.appentus.materialking.Util.ToastClass;
 import com.appentus.materialking.pojo.cart.CartItemPOJO;
-import com.appentus.materialking.webservice.WebServiceUrl;
 import com.appentus.materialking.webservice.WebServiceBase;
+import com.appentus.materialking.webservice.WebServiceUrl;
 import com.appentus.materialking.webservice.WebServicesCallBack;
 import com.squareup.picasso.Picasso;
 
@@ -140,6 +142,20 @@ public class CartListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
             }
         });
 
+        if(resultFoundModels.get(position).getBrand_detail()!=null){
+            holder1.ll_brand.setVisibility(View.VISIBLE);
+            holder1.tv_brand.setText(resultFoundModels.get(position).getBrand_detail().getBrandName());
+        }else{
+            holder1.ll_brand.setVisibility(View.GONE);
+        }
+
+        if(resultFoundModels.get(position).getSize_detail()!=null){
+            holder1.ll_size.setVisibility(View.VISIBLE);
+            holder1.tv_size.setText(resultFoundModels.get(position).getSize_detail().getSizeName());
+        }else{
+            holder1.ll_size.setVisibility(View.GONE);
+        }
+
         Picasso.with(context).load(WebServiceUrl.IMAGEBASEURL + resultFoundModels.get(position).getProductSizeImage()).
                 into(holder1.iv_item_image_cart);
 
@@ -153,8 +169,8 @@ public class CartListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
     public class ViewHolder extends RecyclerView.ViewHolder {
         @BindView(R.id.iv_item_image_cart)
         ImageView iv_item_image_cart;
-        @BindView(R.id.iv_delete)
-        ImageView iv_delete;
+//        @BindView(R.id.iv_delete)
+//        ImageView iv_delete;
         @BindView(R.id.tv_item_name)
         AppCompatTextView tv_item_name;
         @BindView(R.id.tv_minus_item)
@@ -163,6 +179,17 @@ public class CartListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
         AppCompatTextView tv_quantity_cart;
         @BindView(R.id.tv_plus_item)
         AppCompatTextView tv_plus_item;
+
+        @BindView(R.id.ll_brand)
+        LinearLayout ll_brand;
+        @BindView(R.id.tv_brand)
+        TextView tv_brand;
+        @BindView(R.id.ll_size)
+        LinearLayout ll_size;
+        @BindView(R.id.tv_size)
+        TextView tv_size;
+        @BindView(R.id.iv_delete)
+        ImageView iv_delete;
 
         public ViewHolder(View itemView) {
             super(itemView);
